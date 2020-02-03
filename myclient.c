@@ -126,7 +126,7 @@ void Register(){
 	send(server_socket, sender, sizeof(sender), 0);
 	memset(sender, 0, sizeof(sender));
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 
 	if (strstr(reciever,"{\"type\":\"Successful\",\"content\":\"\"}\n")!=0) {
 			printf("you successfully created your account\n\n");
@@ -159,7 +159,7 @@ void login(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 
 	if (strstr(reciever,"AuthToken")!=0) {
 		sscanf(reciever,"{\"type\":\"AuthToken\",\"content\":\"%[^\"]\"}",authtoken);
@@ -217,7 +217,7 @@ void createchannel(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 
 	if (strstr(reciever,"Successful")!=0) {
 			printf("you successfully created your channel\n\n");
@@ -242,7 +242,7 @@ void joinchannel(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 
 	if (strstr(reciever,"Successful")!=0) {
 			printf("you successfully joined %s\n\n",name);
@@ -266,7 +266,7 @@ void logout(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 	if (strstr(reciever,"Successful")!=0){
 	menu();}
 	else printf("unexpected error\n"),loggedinmenu();
@@ -312,7 +312,7 @@ void sendmessage(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 
 	chatmenu();
 
@@ -334,7 +334,7 @@ void refresh(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, 1000000, 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 	char* ptr=reciever+26;
 
 
@@ -367,7 +367,7 @@ void listpeople(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, 1000000, 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 	char* ptr=reciever+26;
 	printf("******************************************************\n");
 	while (strlen(ptr)>3){
@@ -395,7 +395,7 @@ void quitchannel(){
 	socketmaker();
 	send(server_socket, sender, sizeof(sender), 0);
 	clear();recv(server_socket, reciever, sizeof(reciever), 0);
-	printf("you recieved %s\n",reciever);
+	//printf("you recieved %s\n",reciever);
 	loggedinmenu();
 
 

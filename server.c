@@ -90,12 +90,12 @@ return 0;
 void look(){
 
 int n;
-char yn;
+//char yn;
 
 	while (1) {
-		printf("continue?\n" );
-		scanf("%c\n", &yn);
-		if (yn=='n') return;
+		//printf("continue?\n" );
+		//scanf("%c\n", &yn);
+		//if (yn=='n') return;
 		socklen_t len = sizeof(client);
 		client_socket = accept(server_socket, (struct sockaddr*)&client, &len);
 		if (client_socket < 0) {
