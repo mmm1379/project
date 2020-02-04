@@ -91,7 +91,6 @@ void look(){
 
 int n;
 //char yn;
-
 	while (1) {
 		//printf("continue?\n" );
 		//scanf("%c\n", &yn);

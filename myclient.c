@@ -184,7 +184,6 @@ void loggedinmenu(){
 
 char choice[100];
 int intchoice=0;
-
 printf("1: create channel\n2: join channel\n3:Logout\n");
 scanf("%s",choice);
 if (strcmp(choice,"1")==0) intchoice=1;
